@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+<title>Home</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+	integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+	crossorigin="anonymous">
+</head>
+<body>
+	<div class="container">
+		<div class="alert alert-success" role="alert">Hi, This is Login
+			with Persistent Remember Me.</div>
+		<div class="alert alert-success" role="alert">To check cookie:
+			Right Click > inspect > application > cookies > remember-me-cookie</div>
+
+		<form th:action="@{/logout}" method="post">
+			<input type="submit" class="btn btn-primary" value="Logout" />
+		</form>
+
+	</div>
+</body>
+</html>

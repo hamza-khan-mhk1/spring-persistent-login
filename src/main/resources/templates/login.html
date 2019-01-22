@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+<title>Login</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+	integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+	crossorigin="anonymous">
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4">
+			<!-- ERROR -->
+				<div class="alert alert-danger" th:if="${param.error}" role="alert">
+					Invalid Login Credentials!</div>
+			<!-- ERROR -->
+
+				<div class="alert alert-primary" th:if="${param.logout}"
+					role="alert">Logged Out Successfully!</div>
+				<h1>
+					<span class="badge badge-secondary">Remember Me - Practical
+						Implementation</span>
+				</h1>
+				<!-- FORM STARTS -->
+				<form th:action="@{/login}" method="post">
+					<div class="form-group">
+						<label>Username</label> <input type="text" class="form-control"
+							name="username" />
+					</div>
+					<div class="form-group">
+						<label>Password</label> <input type="password"
+							class="form-control" name="password" />
+					</div>
+					<div class="form-group form-check">
+						<input type="checkbox" class="form-check-input" name="remember-me" />
+						<label class="form-check-label">Remember Me</label> <label
+							class="form-check-label">Don't forget to click me</label>
+					</div>
+					<div>
+						<input type="submit" class="btn btn-primary" value="Sign In" />
+					</div>
+				</form>
+				<!-- FORM ENDS -->
+			</div>
+			<div class="col-md-8"></div>
+		</div>
+	</div>
+</body>
+</html>
